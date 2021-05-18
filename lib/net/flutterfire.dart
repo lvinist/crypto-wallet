@@ -60,7 +60,7 @@ Future<bool> removeCoin(String id) async {
   FirebaseFirestore.instance
       .collection('Users')
       .doc(uid)
-      .collection('coins')
+      .collection('Coins')
       .doc(id)
       .delete();
   return true;

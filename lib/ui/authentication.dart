@@ -25,6 +25,7 @@ class _AuthenticationState extends State<Authentication> {
             children: [
               Spacer(),
               TextField(
+                keyboardType: TextInputType.emailAddress,
                 controller: _emailField,
                 decoration: InputDecoration(
                   hintText: 'name@mail.com',

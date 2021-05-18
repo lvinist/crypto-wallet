@@ -101,7 +101,7 @@ class _HomeViewState extends State<HomeView> {
                                 ),
                               ),
                               Text(
-                                '\$${getValues(document.id, document['Amount'])}',
+                                '\$${getValues(document.id, document['Amount']).toStringAsFixed(2)}',
                                 style: TextStyle(
                                   color: Colors.white,
                                 ),

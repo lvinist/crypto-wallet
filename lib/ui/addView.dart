@@ -23,23 +23,27 @@ class _AddViewState extends State<AddView> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          DropdownButton(
-            value: dropDownValue,
-            onChanged: (String value) {
-              setState(() {
-                dropDownValue = value;
-              });
-            },
-            items: coins.map<DropdownMenuItem<String>>((String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Text(value),
-              );
-            }).toList(),
+          Container(
+            width: MediaQuery.of(context).size.width * 0.6,
+            child: DropdownButton(
+              value: dropDownValue,
+              onChanged: (String value) {
+                setState(() {
+                  dropDownValue = value;
+                });
+              },
+              items: coins.map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
           ),
           Container(
             width: MediaQuery.of(context).size.width * 0.6,
             child: TextFormField(
+              keyboardType: TextInputType.numberWithOptions(),
               controller: _amountController,
               decoration: InputDecoration(
                 labelText: "Coin Amount",
